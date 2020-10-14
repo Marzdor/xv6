@@ -89,7 +89,7 @@ int exec(char *path, char **argv)
   proc->sz = sz;
   proc->tf->eip = elf.entry; // main
   proc->tf->esp = sp;
-  curproc->priority = 2; //Giving child process default priority of 2
+  proc->priority = 2; //Giving child process default priority of 2
   switchuvm(proc);
   freevm(oldpgdir);
   return 0;
